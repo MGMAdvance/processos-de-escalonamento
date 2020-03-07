@@ -1,0 +1,2 @@
+language = "java10"
+run = "javac ./processos/FCFS.java && javac ./processos/Main.java && java ./processos/Main"
