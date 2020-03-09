@@ -1,6 +1,6 @@
-# Processos de Escalonamento
+# Algoritmos de Escalonamento
 
-Desenvolver quarto algoritmos de escalonamento de processos e serem apresentado em sala de aula.
+Desenvolver quatro algoritmos de escalonamento de processos a serem apresentados em sala de aula.
 
 - FCFS;
 - SJF (Não-preemptivo);
