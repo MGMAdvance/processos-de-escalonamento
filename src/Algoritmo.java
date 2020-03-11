@@ -7,7 +7,7 @@ abstract class Algoritmo {
     private ArrayList<Processo> listaProcessos = new ArrayList<Processo>();
 
     /**
-     * Adiciona um processo na ArrayList
+     * Adiciona um processo na ArrayList.
      * @param Processo
      */
     public void addProcesso(Processo novoProcesso){
@@ -15,7 +15,7 @@ abstract class Algoritmo {
     }
 
     /**
-     * Retorna o Objeto do processo na ArrayList
+     * Retorna o Objeto do processo na ArrayList.
      * @param id
      * @return o Processo especificado
      */
@@ -24,11 +24,19 @@ abstract class Algoritmo {
     }
 
     /**
-     * Retorna a ArrayList completa
+     * Retorna a ArrayList completa.
      * @return a lista de processos completa
      */
     public ArrayList<Processo> getAllProcessos(){
         return this.listaProcessos;
+    }
+
+    /**
+     * Retorna o tamanho da ArrayList.
+     * @return tamanho da ArrayList (Int)
+     */
+    public int getListaSize(){
+        return this.listaProcessos.size();
     }
 
     /**
@@ -59,7 +67,7 @@ abstract class Algoritmo {
     }
 
     /**
-     * Retorna uma Array referente ao Processo escolhido
+     * Retorna uma Array referente ao Processo escolhido.
      * @param id
      * @return
      */
@@ -71,5 +79,21 @@ abstract class Algoritmo {
         Processo.add(this.getProcesso(id).getPrioridade());
 
         return Processo;
+    }
+
+    /**
+     * Deleta um Objeto da ArrayList.
+     * @param index
+     */
+    public void deletarProcesso(int index){
+        this.listaProcessos.remove(index);
+    }
+
+    /**
+     * Gera um printLn rapidamente.
+     * @param text
+     */
+    public void msg(String text){
+        System.out.println(text);
     }
 }
