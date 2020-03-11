@@ -12,8 +12,8 @@ public class App{
       
     System.out.println("1 - FCFS");
     System.out.println("2 - SJF");
-    System.out.println("3 - ...");
-    System.out.println("4 - ...\n");
+    System.out.println("3 - Prioridade");
+    System.out.println("4 - Round Robin\n");
     System.out.println("5 - Sair\n");
     System.out.println("Escolha o algoritmo: ");
 
