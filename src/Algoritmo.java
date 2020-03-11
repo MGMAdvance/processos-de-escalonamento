@@ -8,17 +8,16 @@ abstract class Algoritmo {
 
     /**
      * Adiciona um processo na ArrayList
-     * @param id
-     * @param quantum
+     * @param Processo
      */
-    public void addProcesso(int id, int quantum){
-        this.listaProcessos.add(new Processo(id, quantum));
+    public void addProcesso(Processo novoProcesso){
+        this.listaProcessos.add(novoProcesso);
     }
 
     /**
      * Retorna o Objeto do processo na ArrayList
      * @param id
-     * @return
+     * @return o Processo especificado
      */
     public Processo getProcesso(int id) {
         return this.listaProcessos.get(id);
@@ -26,7 +25,7 @@ abstract class Algoritmo {
 
     /**
      * Retorna a ArrayList completa
-     * @return
+     * @return a lista de processos completa
      */
     public ArrayList<Processo> getAllProcessos(){
         return this.listaProcessos;
