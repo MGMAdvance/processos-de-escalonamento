@@ -18,7 +18,7 @@ class SJF extends Algoritmo {
       this.msg("Digite o Quantum do processo #" + (i + 1) + ": ");
       quantum = scanner.nextInt();
 
-      this.addProcesso(new Processo(i, quantum));
+      this.addProcesso(new Processo(i + 1, quantum));
     }
 
     scanner.close();
@@ -30,7 +30,7 @@ class SJF extends Algoritmo {
     Collections.sort(listaSJF, Processo.compareByQuantum);
 
     for (Processo processo : listaSJF) {
-      System.out.println(String.format("\nO processo #%x foi executado em %x ms", 
+      System.out.println(String.format("O processo #%x foi executado em %x ms", 
         processo.getIdProcesso(), processo.getQuantum()));
     }
     
