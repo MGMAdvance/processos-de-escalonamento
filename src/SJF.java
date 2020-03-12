@@ -29,10 +29,13 @@ class SJF extends Algoritmo {
 
     Collections.sort(listaSJF, Processo.compareByQuantum);
 
+    System.out.print("\n===== Resultado SJF =====");
+
     for (Processo processo : listaSJF) {
-      System.out.println(String.format("O processo #%x foi executado em %x ms", 
+      System.out.println(String.format("O processo #%d foi executado em %d ms", 
         processo.getIdProcesso(), processo.getQuantum()));
     }
-    
+
+    System.out.println("===== FIM =====");
   }
 }
