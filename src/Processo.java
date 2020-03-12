@@ -1,5 +1,7 @@
 package src;
 
+import java.util.Comparator;
+
 class Processo{
   private int idProcesso;
   private int quantum;
@@ -34,4 +36,14 @@ class Processo{
   public void setPrioridade(int valor){
     this.prioridade = valor;
   }
+
+  /**
+ * Retorna um Comparator para ordenar a lista de processos pelo campo quantum.
+ * @return Comparador que será usado no método Collections.sort()
+ */
+  public static Comparator<Processo> compareByQuantum = new Comparator<Processo>() {
+    public int compare(Processo o1, Processo o2) {
+      return (o1.quantum - o2.quantum);
+    }
+  };
 }

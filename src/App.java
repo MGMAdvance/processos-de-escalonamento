@@ -28,6 +28,10 @@ public class App{
         menuFCFS();
         break;
 
+      case 2:
+        menuSJF();
+        break;
+
       case 9:
         System.out.println("Adeus...");
         break;
@@ -54,7 +58,12 @@ public class App{
     fifo.execute();
   }
 
-  public static void menuSJF(){}
+  public static void menuSJF(){
+    SJF sjf = new SJF();
+
+    sjf.prepare();
+    sjf.execute();
+  }
 
   public static void menuPrioridade(){}
 
