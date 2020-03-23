@@ -7,7 +7,14 @@ class Processo{
   private int quantum;
   private int prioridade;
 
-  public Processo(int idProcesso, int quantum){
+  public Processo(int idProcesso, int quantum, int prioridade) {
+	super();
+	this.idProcesso = idProcesso;
+	this.quantum = quantum;
+	this.prioridade = prioridade;
+}
+
+public Processo(int idProcesso, int quantum){
     this.idProcesso = idProcesso;
     this.quantum = quantum;
     this.prioridade = 3;

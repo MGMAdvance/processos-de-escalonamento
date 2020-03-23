@@ -31,6 +31,10 @@ public class App{
       case 2:
         menuSJF();
         break;
+        
+      case 3:
+    	  menuPrioridade();
+    	  break;
 
       case 9:
         System.out.println("Adeus...");
@@ -65,7 +69,13 @@ public class App{
     sjf.execute();
   }
 
-  public static void menuPrioridade(){}
+  public static void menuPrioridade(){
+	  Prioridade prd = new Prioridade();
+	  
+	  prd.prepare();
+	  prd.processar();
+  }
+  
 
   public static void menuRoundRobin(){}
 }
