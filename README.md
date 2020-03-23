@@ -2,10 +2,10 @@
 
 Desenvolver quatro algoritmos de escalonamento de processos a serem apresentados em sala de aula.
 
-- FCFS;
-- SJF (Não-preemptivo);
 - Algorítmo de Prioridades;
-- Round Robin.
+- FCFS;
+- Round Robin;
+- SJF (Não-preemptivo).
 
 ## Diagrama de classe
 
