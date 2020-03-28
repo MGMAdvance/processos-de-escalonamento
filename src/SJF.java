@@ -36,6 +36,6 @@ class SJF extends Algoritmo {
         processo.getIdProcesso(), processo.getQuantum()));
     }
 
-    System.out.println("===== FIM =====");
+    System.out.println("===== Resultado FIM =====");
   }
 }

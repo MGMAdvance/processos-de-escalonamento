@@ -26,35 +26,40 @@ public class RoundRobin extends Algoritmo{
 
 	public void execute(){
         ArrayList<Processo> listaProcessos = this.getAllProcessos();
-        int qtProcessos = 0;
-        qtProcessos = listaProcessos.size();
+        int qtProcessos = listaProcessos.size();
         
-        // O processo #1 executou com 10 segundos, faltam 5 segundos para finalizar
-        int a = 0;
-        int contador = 0; //Primeira posiÃ§Ã£o da fila
+        int aux = 0;
+        int contador = 0; //Primeira posição da fila
         while(qtProcessos != 0){
             
-
-            a = listaProcessos.get(contador).getQuantum();
-            a = (a-quantumAlgoritmo) < 0 ? 0 : a-quantumAlgoritmo;
-            listaProcessos.get(contador).setQuantum(a);
+        	aux = listaProcessos.get(contador).getQuantum();
+        	aux = (aux - quantumAlgoritmo) <= 0 ? 0 : aux - quantumAlgoritmo;
+            listaProcessos.get(contador).setQuantum(aux);
             
             if (listaProcessos.get(contador).getQuantum() > 0){
-                //cria um processo identico ao que foi testado no if
+            	apresentaProcesso(listaProcessos,contador);
+            	
+                // cria um processo identico ao que foi testado no if
                 Processo novoProcesso = listaProcessos.get(contador); 
                 // remove o processo com quantum maior que 0
                 listaProcessos.remove(contador);
                 // adiciona o processo que foi clonado no final do processo
                 listaProcessos.add(novoProcesso);
             } else {
+            	apresentaProcesso(listaProcessos,contador);
+            	
                 qtProcessos--;
             }
-
-            System.out.print(String.format("\n O Processo %d vai para a fila ", contador+1));
-            this.msg(String.format("com ate %d segundos", listaProcessos.get(contador).getQuantum()));
-            if (contador + 1 == listaProcessos.size()) {
+    	
+            // Se o processo tiver sido finalizado, altera o valor para true
+            if(aux == 0) {
+            	listaProcessos.get(contador).setFinalizado(true);
+            }
+            
+            // Se o contador tiver rodado a lista toda seu valor é resetado
+            if(contador + 1 == listaProcessos.size()) {
             	contador = 0;
-            }else {
+            } else {
             	contador++;
             }
             
@@ -62,4 +67,12 @@ public class RoundRobin extends Algoritmo{
 
         this.msg("Acabou o programa!");
     }
+
+	private void apresentaProcesso(ArrayList<Processo> lista, int contador) {
+		// Se o processo não tiver sido finalizado, mostra quanto tempo falta
+        if(!lista.get(contador).isFinalizado()) {
+        	System.out.print(String.format("\n O Processo %d vai para a fila ", contador+1));
+            System.out.println(String.format("com %d segundos restantes.", lista.get(contador).getQuantum()));
+        }
+	}
 }

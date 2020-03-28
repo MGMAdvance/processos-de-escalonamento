@@ -6,18 +6,21 @@ class Processo{
   private int idProcesso;
   private int quantum;
   private int prioridade;
+  private boolean finalizado;
 
   public Processo(int idProcesso, int quantum, int prioridade) {
     super();
     this.idProcesso = idProcesso;
     this.quantum = quantum;
     this.prioridade = prioridade;
+    this.setFinalizado(false);
   }
 
   public Processo(int idProcesso, int quantum){
     this.idProcesso = idProcesso;
     this.quantum = quantum;
     this.prioridade = 3;
+    this.setFinalizado(false);
   }
 
   public int getIdProcesso(){
@@ -44,7 +47,15 @@ class Processo{
     this.prioridade = valor;
   }
 
-  /**
+  public boolean isFinalizado() {
+	return finalizado;
+  }
+
+  public void setFinalizado(boolean finalizado) {
+	this.finalizado = finalizado;
+  }
+
+ /**
  * Retorna um Comparator para ordenar a lista de processos pelo campo quantum.
  * @return Comparador que será usado no método Collections.sort()
  */
@@ -52,5 +63,5 @@ class Processo{
     public int compare(Processo o1, Processo o2) {
       return (o1.quantum - o2.quantum);
     }
-  }
+  };
 }
