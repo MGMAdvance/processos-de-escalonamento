@@ -8,13 +8,13 @@ class Processo{
   private int prioridade;
 
   public Processo(int idProcesso, int quantum, int prioridade) {
-	super();
-	this.idProcesso = idProcesso;
-	this.quantum = quantum;
-	this.prioridade = prioridade;
-}
+    super();
+    this.idProcesso = idProcesso;
+    this.quantum = quantum;
+    this.prioridade = prioridade;
+  }
 
-public Processo(int idProcesso, int quantum){
+  public Processo(int idProcesso, int quantum){
     this.idProcesso = idProcesso;
     this.quantum = quantum;
     this.prioridade = 3;
@@ -52,5 +52,5 @@ public Processo(int idProcesso, int quantum){
     public int compare(Processo o1, Processo o2) {
       return (o1.quantum - o2.quantum);
     }
-  };
+  }
 }

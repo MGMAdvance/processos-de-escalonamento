@@ -35,7 +35,11 @@ public class App{
       case 3:
     	  menuPrioridade();
     	  break;
-
+      
+      case 4:
+    	  menuRoundRobin();
+        break;
+        
       case 9:
         System.out.println("Adeus...");
         break;
@@ -77,5 +81,10 @@ public class App{
   }
   
 
-  public static void menuRoundRobin(){}
+  public static void menuRoundRobin(){
+    RoundRobin rr = new RoundRobin();
+
+    rr.prepare();
+    rr.execute();
+  }
 }
