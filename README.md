@@ -7,6 +7,10 @@ Desenvolver quatro algoritmos de escalonamento de processos a serem apresentados
 - Round Robin;
 - SJF (Não-preemptivo).
 
+## Como rodar
+
+Compile o `App.java` e execute.
+
 ## Diagrama de classe
 
 Acesse o arquivo [diagrama](diagrama-algoritmos.jpg) para visualizar a forma em que as classes foram desenvolvidas.
